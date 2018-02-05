@@ -1,3 +1,6 @@
 <template>
-  <div>Home</div>
+  <div>
+  	<h1>home</h1>
+  	<p>hot test</p>
+	</div>
 </template>

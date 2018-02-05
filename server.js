@@ -46,6 +46,10 @@ app.use('/dist', serve('./dist', true))
 app.use(favicon(path.resolve(__dirname, 'src/assets/logo.png')))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
 
+app.use('/api',function(req, res, next) {
+  require('./api-server/app')(req, res, next);
+});
+
 app.get('*', (req, res) => {
   if (!renderer) {
     return res.end('waiting for compilation... refresh in a moment.')
